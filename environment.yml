@@ -1,0 +1,28 @@
+# Conda env for the project (local + Renku code-based environments).
+#
+# Renku recommends conda-forge + nodefaults (avoid `defaults`); see:
+# https://docs.renkulab.io/en/latest/docs/users/sessions/guides/environments/create-environment-with-custom-packages-installed
+#
+# Do NOT commit `prefix:` — that path is machine-specific (your old export had a Windows path).
+# Python: use `python=3.12` not `python==3.12` (Renku note on version specifiers).
+#
+# PyTorch: plain `pip install torch` is often CPU-only. For CUDA on Linux/GPU sessions,
+# follow https://pytorch.org/get-started/locally/ and adjust the pip section or use conda
+# pytorch + nvidia channels if your Renku image supports it.
+
+name: aml_group11
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - pip
+  - pyyaml
+  - scikit-learn
+  - tensorboard
+  - numpy
+  - scipy
+  - pip:
+      - torchmetrics>=1.9
+      - torch>=2.5,<2.6
+      - torchaudio>=2.5,<2.6
