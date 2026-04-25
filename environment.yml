@@ -22,7 +22,10 @@ dependencies:
   - tensorboard
   - numpy
   - scipy
+  - pandas
+  - matplotlib
   - pip:
       - torchmetrics>=1.9
       - torch>=2.5,<2.6
       - torchaudio>=2.5,<2.6
+      - soundfile
