@@ -25,8 +25,10 @@ dependencies:
   - pandas
   - matplotlib
   - pip:
+      - --index-url https://download.pytorch.org/whl/cu130
+      - torch==2.10.0
+      - torchvision==0.25.0
+      - torchaudio==2.10.0
       - torchmetrics>=1.9
-      - torch>=2.5,<2.6
-      - torchaudio>=2.5,<2.6
       - timm>=1.0.0
       - soundfile
